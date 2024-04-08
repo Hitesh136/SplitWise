@@ -19,17 +19,18 @@ class ViewBalanceViewModel {
 		
 		func configureModel() {
 				let perShare = balanceModel.totalAmount / Double((balanceModel.participants.count + 1))
+		
 				
-				let firstExpense = ExpenseModel(payer: balanceModel.payer,
-																				amount: perShare * Double(balanceModel.participants.count))
-				cellModels.append(BalanceCellViewModel(expenseModel: firstExpense))
-				
-				var newAmount: Double = firstExpense.amount
+				var newAmount: Double = perShare * Double(balanceModel.participants.count)
 				if let amount = AmountSing.shared.pastTrans[balanceModel.payer] {
 						newAmount += amount
 				}
 				AmountSing.shared.pastTrans[balanceModel.payer] = newAmount
 				
+				
+				let firstExpense = ExpenseModel(payer: balanceModel.payer,
+																				amount: newAmount)
+				cellModels.append(BalanceCellViewModel(expenseModel: firstExpense))
 				for parti in balanceModel.participants {
 						
 						var newPartiAmount: Double = -perShare
