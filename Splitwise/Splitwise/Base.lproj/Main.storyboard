@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -11,7 +11,7 @@
         <!--Add Balance View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="AddBalanceViewController" id="BYZ-38-t0r" customClass="AddBalanceViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddBalanceViewController" id="BYZ-38-t0r" customClass="AddBalanceViewController" customModule="Splitwise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,6 +135,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add"/>
+                                <connections>
+                                    <action selector="actionAdd" destination="BYZ-38-t0r" eventType="touchUpInside" id="dbc-cV-0rn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -151,6 +154,11 @@
                     <connections>
                         <outlet property="expenseLabel" destination="96j-5A-3Rd" id="3rN-q9-Ytl"/>
                         <outlet property="expenseTextField" destination="GaL-Iw-EzM" id="Nl4-MO-c1c"/>
+                        <outlet property="paidByTextField" destination="Fbf-jN-pVV" id="kg1-h4-QdB"/>
+                        <outlet property="partiTextField1" destination="bqh-Sv-3U2" id="ehZ-rB-0eO"/>
+                        <outlet property="partiTextField2" destination="1yZ-jw-9RX" id="bSf-eM-bCt"/>
+                        <outlet property="totalAmountLabel" destination="dA6-R3-HOq" id="Hnd-IM-KTg"/>
+                        <outlet property="totalAmountTextField" destination="IIo-Pj-jjQ" id="Sdd-br-nit"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -190,6 +198,9 @@
                             <constraint firstItem="CSx-dy-Z3h" firstAttribute="leading" secondItem="zNA-nQ-Hci" secondAttribute="leading" constant="20" id="qDr-je-RVz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="V8T-v2-fU0" id="Hyh-fR-rwX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLp-X9-bl1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
